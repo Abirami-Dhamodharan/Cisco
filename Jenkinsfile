@@ -13,6 +13,12 @@ pipeline {
                                 description: 'Tag of antares image',
                                 defaultValue: 'latest',
                                 trim: true
+                            ),
+                            string(
+                                name: 'SPARKROOMID', 
+                                description: 'Spark Room ID to post notification message',
+                                defaultValue: 'latest',
+                                trim: true
                             )
                         ])    
                     ])
@@ -20,6 +26,13 @@ pipeline {
                 }
             }
         }
+
+        stage('Checkout') {
+            cleanWs notFailBuild: true
+            checkout scm
+            sh 'ls -lrth'
+        }
+        
         stage('Build') {
             steps {
                 echo 'Building..'
