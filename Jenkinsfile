@@ -39,6 +39,7 @@ pipeline {
             steps {
                 echo 'Building..'
                 echo params.TAG
+                echo params.SPARKROOMID
             }
         }
         stage('Test') {
