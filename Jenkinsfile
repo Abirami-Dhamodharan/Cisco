@@ -28,11 +28,13 @@ pipeline {
         }
 
         stage('Checkout') {
-            cleanWs notFailBuild: true
-            checkout scm
-            sh 'ls -lrth'
+            steps {
+                cleanWs notFailBuild: true
+                checkout scm
+                sh 'ls -lrth'
+            }    
         }
-        
+
         stage('Build') {
             steps {
                 echo 'Building..'
