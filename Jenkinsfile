@@ -2,10 +2,8 @@ pipeline {
     agent any
 
     stages {
-        stage('ecr-sync') {
-            when { 
-                    branch 'master'
-            }
+        if (env.GIT_BRANCH == 'master') {
+            stage('ecr-sync') {
             steps {
                 echo 'Building..'
                 sh 'printenv'
@@ -17,4 +15,5 @@ pipeline {
             }
         }
     }
+}
 }
