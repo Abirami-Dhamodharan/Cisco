@@ -3,10 +3,8 @@ pipeline {
 
     stages {
         stage('Check branch') {
-            when {
-                not { 
+            when { 
                     branch 'master'
-                }
             }
             steps {
                 echo 'Building..'
