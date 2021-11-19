@@ -1,3 +1,7 @@
 node() {
-    checkout scm
+    stage('Checkout') {
+        cleanWs notFailBuild: true
+        checkout scm
+        sh 'ls -lrth'
+    }
 }
