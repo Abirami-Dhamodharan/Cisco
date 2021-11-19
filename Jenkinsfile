@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     stages {
-        stage('Check branch') {
+        stage('ecr-sync') {
             when { 
                     branch 'master'
             }
