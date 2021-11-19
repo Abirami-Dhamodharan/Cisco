@@ -6,7 +6,7 @@ pipeline {
             when { 
                 allOf{
                     branch 'master'
-                    equals(actual:env.USER,expected:'a')
+                    equals(actual:env.USER,expected:'adhamodh')
                 }
             }
             steps {
