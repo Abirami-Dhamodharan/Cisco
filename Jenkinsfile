@@ -4,7 +4,10 @@ pipeline {
     stages {
         stage('ecr-sync') {
             when { 
+                allOf{
                     branch 'master'
+                    equals(actual:env.USER,expected:'adhamodh')
+                }
             }
             steps {
                 echo 'Building..'
