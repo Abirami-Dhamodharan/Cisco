@@ -1,4 +1,4 @@
-node() 
+node() {
     if (env.BRANCH_NAME == 'master') {
 
         stage('checkout') {
