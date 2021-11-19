@@ -14,12 +14,6 @@ pipeline {
                                 defaultValue: 'latest',
                                 trim: true
                             ),
-                            string(
-                                name: 'SPARKROOMID', 
-                                description: 'Spark Room ID to post notification message',
-                                defaultValue: 'latest',
-                                trim: true
-                            )
                         ])    
                     ])
                 
@@ -36,10 +30,10 @@ pipeline {
         }
 
         stage('Build') {
+            when { branch 'master'}
             steps {
                 echo 'Building..'
                 echo params.TAG
-                echo params.SPARKROOMID
             }
         }
         stage('Test') {
