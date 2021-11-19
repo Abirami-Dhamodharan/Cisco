@@ -17,6 +17,7 @@ pipeline {
                 echo env.USER
                 script {
                      def vars = readJSON file 'cmc.json'
+                     echo vars['service']['status']
                 }             
             }
         }
