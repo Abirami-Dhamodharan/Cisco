@@ -8,7 +8,8 @@ pipeline {
             }
             steps {
                 echo 'Building..'
-                echo '$BRANCH_NAME'
+                sh 'printenv'
+                echo env.BRANCH_NAME
             }
         }
     }
