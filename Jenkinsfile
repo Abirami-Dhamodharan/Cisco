@@ -17,10 +17,6 @@ pipeline {
                 echo env.USER
                 
             }
-            steps {
-                def props = readJSON file: 'cmc.json'
-                echo props['service']['status']
-            }
         }
     }
 }
