@@ -15,8 +15,9 @@ pipeline {
                 echo env.BRANCH_NAME
                 echo env.GIT_BRANCH
                 echo env.USER
-                def vars = readJSON file: "${env.WORKSPACE}\\cmc.json"
-                
+                script {
+                     def vars = readJSON file: "${env.WORKSPACE}\\cmc.json"
+                }             
             }
         }
     }
