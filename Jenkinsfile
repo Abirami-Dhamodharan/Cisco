@@ -3,6 +3,7 @@ pipeline {
 
     stages {
 
+        if (env.BRANCH_NAME == 'master') {
         stage('Setup parameters') {
             steps {
                 script { 
@@ -46,5 +47,6 @@ pipeline {
                 echo 'Deploying....'
             }
         }
+    }
     }
 }
