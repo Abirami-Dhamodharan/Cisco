@@ -1,5 +1,5 @@
 node() {
-    if (env.BRANCH_NAME == 'master') {
+        echo env.BRANCH_NAME 
 
         stage('checkout') {
             cleanWs notFailBuild: true
@@ -12,6 +12,5 @@ node() {
                 def projects = readJSON file:'cmc.json'
                 echo projects['service']['status']
             }
-        }
-    }    
+        }  
 }
