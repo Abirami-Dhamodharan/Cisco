@@ -11,6 +11,7 @@ node() {
             script {
                 def projects = readJSON file:'cmc.json'
                 echo projects['subServices'][0].toString()
+                echo "Version"
                 echo projects['subServices'][0]['packages'][0]['version'].toString()
             }
         }  
