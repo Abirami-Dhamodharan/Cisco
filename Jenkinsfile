@@ -10,7 +10,8 @@ node() {
         stage('ecr-sync') {
             script {
                 def projects = readJSON file:'cmc.json'
-                echo projects['service']['status']
+                echo projects['subServices'][0]
+                echo projects['subServices'][0]['packages'][0]['version']
             }
         }  
 }
